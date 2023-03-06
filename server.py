@@ -1,13 +1,24 @@
 import os
 
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return "Привет от приложения Flask"
+    return f'''
+    <h2>Карсота</h2>
+    <p>
+    <img src="{url_for('static', filename='img/3.jpeg')}"
+     width="600" alt="красота страшная сила">
+     </p>
+     <h2>Карсота</h2>
+    <p>
+     <p>
+<img src="{url_for('static', filename='img/2.jpeg')}"
+     width="600" alt="красота страшная сила">
+     </p>'''
 
 
 if __name__ == '__main__':
